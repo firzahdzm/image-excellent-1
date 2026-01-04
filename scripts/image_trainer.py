@@ -136,8 +136,6 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
                    "max_grad_norm",
                    "seed",
                    "network_dropout",
-                   "network_dim",
-                   "network_alpha"
                 ]:
                     if optional_key in lrs_settings:
                         config[optional_key] = lrs_settings[optional_key]
@@ -146,7 +144,6 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
         else:
             print("Warning: Could not load LRS configuration, using default values", flush=True)
 
-        # Update config
         network_config_person = {
             "stabilityai/stable-diffusion-xl-base-1.0": 235,
             "Lykon/dreamshaper-xl-1-0": 235,
